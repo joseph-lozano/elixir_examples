@@ -1,21 +1,14 @@
-# Example
+# Elixir Examples
 
-**TODO: Add description**
 
-## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `example` to your list of dependencies in `mix.exs`:
+## Examples of Elixir Patterns
 
-```elixir
-def deps do
-  [
-    {:example, "~> 0.1.0"}
-  ]
-end
-```
+Would love comments or pull requests if anything I am doing is not a best practice
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/example](https://hexdocs.pm/example).
+* Wrapping an API in `Example.API`
+* A Genserver that fires off every interval at `Example.Server`
+    * Black magic metaprogramming testing (this is probably not a best practice)
+
+
 

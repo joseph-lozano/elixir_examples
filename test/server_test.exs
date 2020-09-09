@@ -1,5 +1,5 @@
 defmodule Example.ServerTest do
-  @doc "Black magic metaprogamming. Almost certainly a mistake"
+  @doc "Black magic metaprogamming. Almost certainly a mistake, and not best practice"
 
   alias Example.Server
   use ExUnit.Case
