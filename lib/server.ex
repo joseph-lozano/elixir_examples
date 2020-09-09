@@ -1,6 +1,5 @@
 defmodule Example.Server do
   @doc "Example Server that makes an API call every 5 minutes"
-  alias Example.API
 
   use GenServer
 
@@ -28,6 +27,12 @@ defmodule Example.Server do
       not is_atom(Keyword.get(opts, :name)) ->
         {:error, :name_must_be_atom}
 
+      is_nil(Keyword.get(opts, :api)) ->
+        {:error, :must_provide_api}
+
+      not is_atom(Keyword.get(opts, :api)) ->
+        {:error, :api_must_be_module}
+
       true ->
         {:ok, opts}
     end
@@ -45,7 +50,7 @@ defmodule Example.Server do
 
   @impl true
   def handle_continue(:api_call, state) do
-    case API.get() do
+    case state.api.get() do
       {:ok, resp} -> {:noreply, Map.merge(state, resp), {:continue, :send_after}}
       {:error, reason} -> {:stop, reason}
     end
